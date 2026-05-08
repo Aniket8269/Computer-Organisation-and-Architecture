@@ -5,9 +5,13 @@
 **Theory:** Logisim is an open-source graphical tool used to design and simulate digital logic circuits. It is widely used in Computer Organization and Architecture (COA) courses because of its intuitive interface and its ability to simulate simple gates as well as complex Central Processing Units (CPUs).Java Runtime Environment (JRE): Logisim is a Java-based application, meaning it is cross-platform (runs on Windows, macOS, and Linux) but requires a JRE to execute.Logisim-evolution: Since the original Logisim development ceased in 2011, "Logisim-evolution" is the modern standard, offering features like FPGA board support, chronograms, and VHDL/Verilog export.
 
 **Procedure:** Follow these steps to complete the installation:
+
 Step 1: Check for Java InstallationOpen your terminal or command prompt.Type java -version.If Java is not installed, download and install the latest JDK (Java Development Kit) from the official Oracle or OpenJDK website.
+
 Step 2: Download the ExecutableNavigate to the official repository (e.g., GitHub for Logisim-evolution).Download the appropriate version for your OS:Windows: .msi or .exe file.macOS: .dmg file.Linux/Generic: .jar file.
+
 Step 3: Installation/ExecutionWindows/macOS: Run the installer and follow the on-screen prompts.JAR File: If using the .jar version, right-click and "Open with Java" or use the command:java -jar logisim-evolution.jar
+
 Step 4: VerificationOnce the application opens, locate the Canvas (center), the Component Tree (left), and the Attribute Table (bottom-left).
 
 **Result:** The installation was successful. Upon launching the application, a blank workspace appeared. To test the functionality, a simple AND gate was placed on the canvas:Input AInput BOutput (AND)Observation000LED remains dark010LED remains dark100LED remains dark111LED glows greenThe simulation responded in real-time as the input pins were toggled using the Poke Tool (the hand icon).
@@ -19,27 +23,47 @@ Step 4: VerificationOnce the application opens, locate the Canvas (center), the 
 **Aim:** To design, implement, and simulate Half Adder and Full Adder circuits using Logisim and verify their truth tables.
 
 **Theory:** Adders are fundamental arithmetic circuits in a Computer’s Arithmetic Logic Unit (ALU).
+
 1.Half Adder: A combinatorial circuit that performs the addition of two binary digits (bits).
+
         It produces two outputs: Sum (S) and Carry (C).
+        
         Sum is calculated using an XOR gate: $S = A \oplus B$
+        
         Carry is calculated using an AND gate: $C = A \cdot B$
+        
         Limitation: It cannot handle a carry-in bit from a previous addition.
+
 2.Full Adder: A circuit that adds three bits: two significant bits (A and B) and a carry bit (Cin) from a previous stage. 
+
         Sum: $S = A \oplus B \oplus Cin$
+        
         Carry-out (Cout): $Cout = (A \cdot B) + (Cin \cdot (A \oplus B))$
+        
         A Full Adder can be constructed using two Half Adders and an OR gate.
 
 **Procedure:**
+
 1.Half Adder Construction:
+    
     Open Logisim and select the Wiring folder to place two input pins (A, B) and two output pins (Sum, Carry).
+    
     Place an XOR gate for the Sum and an AND gate for the Carry.
+    
     Connect the inputs to both gates and link the gate outputs to the respective output pins.
+    
     Use the Poke Tool to toggle inputs and verify the truth table.
+
 2.Full Adder Construction:
+
     Place three input pins (A, B, Cin) and two output pins (Sum, Cout).
+    
     Method A (Gates): Use two 3-input XOR gates (or two 2-input XORs) for Sum, and a combination of AND/OR gates for Carry-out.
+    
     Method B (Sub-circuits): Use the "Project -> Add Circuit" feature to create a Half Adder, then drag two instances of it into a new "Full Adder" circuit.
+    
     Connect the components according to the logic expressions.
+    
     Verify the results for all 8 possible input combinations.
 
 **Result/Observation:**
@@ -93,15 +117,22 @@ chain.
 The carry output ($C_{out}$) of each Full Adder is connected to the carry input ($C_{in}$) of the next higher-order Full Adder. The carry "ripples" through the stages from the least significant bit (LSB) to the most significant bit (MSB). For a 4-bit adder, we add two 4-bit numbers $A (A_3 A_2 A_1 A_0)$ and $B (B_3 B_2 B_1 B_0)$ along with an initial carry ($C_{in}$), producing a 4-bit sum $S (S_3 S_2 S_1 S_0)$ and a final carry bit ($C_{out}$).
 
 **Procedure:** 
+
 1. Create a Full Adder Sub-circuit: Open Logisim and create a functional Full Adder circuit. Save this as a sub-circuit to be reused.
+
 2. Arrange Components: In a new main circuit, drag and drop four instances of the Full Adder sub-circuit labeled FA0, FA1, FA2, and FA3.
+
 3. Connect Carries: Connect the carry-out of FA0 to the carry-in of FA1, the carry-out of FA1 to the carry-in of FA2, and so on.
+
 4. Define Inputs: Use two 4-bit input pins (or eight individual 1-bit pins) for numbers A and B. Connect each bit to the corresponding Full Adder stage.
+
 5. Define Outputs: Connect the Sum outputs of each Full Adder to a 4-bit output pin or four individual LEDs. Connect the final carry-out of FA3 to a separate output pin.
+
 6. Simulation: Use the Poke Tool to input binary values and observe if the sum and carry match manual binary addition.
 
 **Result:** 
 The 4-bit Ripple Carry Adder was successfully implemented. During simulation, the following test case was observed:
+
 | Input A | Input B | Carry In | Sum (S3-S0) | Carry Out | Decimal Equivalent |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 
@@ -119,8 +150,7 @@ The circuit correctly performed addition, though a small propagation delay was s
 
 **Aim:** To design, implement, and simulate an 8x3 Encoder and a 4x1 Multiplexer (MUX) in Logisim to understand the principles of data compression and data selection in digital systems.
 
-**Theory:** 
-This activity covers two essential combinatorial circuits used in data handling:
+**Theory:** This activity covers two essential combinatorial circuits used in data handling:
 
 1. 8x3 Encoder: An encoder is a circuit that converts an active input signal into a coded binary output. In an 8x3 encoder (Octal-to-Binary), there are eight input lines and three output lines. It identifies which input is "high" and represents that index in 3-bit binary form.
 
