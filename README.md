@@ -1,4 +1,4 @@
-                                                  LAB ACTIVITY 1
+                                                      LAB ACTIVITY 1
                                                   
 **Aim:** To successfully install and configure Logisim (or an actively maintained fork like Logisim-evolution) on a local workstation to enable the design and simulation of digital logic circuits.
 
@@ -14,7 +14,7 @@ Step 4: VerificationOnce the application opens, locate the Canvas (center), the 
 
 **Conclusion:** The Logisim environment has been correctly configured. This tool will serve as the primary platform for building and testing combinatorial and sequential logic circuits, providing a visual understanding of how data flows through a computer's architecture.
 
-                                                  LAB ACTIVITY 2
+                                                      LAB ACTIVITY 2
                                                   
 **Aim:** To design, implement, and simulate Half Adder and Full Adder circuits using Logisim and verify their truth tables.
 
@@ -48,13 +48,13 @@ Half Adder Truth Table
 | Input A | Input B | Sum (S) | Carry (C) |
 | :---: | :---: | :---: | :---: |
 
-  0   0   0   0 
+ | 0 | 0 | 0 | 0 | 
 
-  0   1   1   0  
+ | 0 | 1 | 1 | 0 |
 
-  1   0   1   0  
+ | 1 | 0 | 1 | 0 |
 
-  1   1   0   1
+ | 1 | 1 | 0 | 1 |
 
 
 Full Adder Truth Table
@@ -82,7 +82,7 @@ Full Adder Truth Table
 
 **Conclusion:** The Half and Full Adder circuits were successfully designed and simulated. We observed that while a Half Adder is sufficient for adding two single bits, a Full Adder is essential for multi-bit addition (cascading) as it accounts for the carry bit from lower-order positions. This experiment confirms the basic building blocks of binary arithmetic in computer architecture.
 
-                                                  _**LAB ACTIVITY 3**_
+                                                        LAB ACTIVITY 3
                                                   
 **Aim:** To design and simulate a 4-bit Ripple Carry Adder (RCA) by cascading four Full Adders in Logisim and to verify its binary addition capabilities.
 
@@ -116,7 +116,7 @@ The circuit correctly performed addition, though a small propagation delay was s
 
 **Conclusion:** We successfully designed a 4-bit Ripple Carry Adder. The experiment demonstrated that while the RCA is simple to design by cascading Full Adders, the overall speed of the circuit is limited by the time required for the carry bit to propagate from the first stage to the last. This highlights the importance of carry-lookahead adders for high-speed computing tasks.
 
-                                                  _**LAB ACTIVITY 4**_
+                                                  LAB ACTIVITY 4
 
 **Aim:** To design, implement, and simulate an 8x3 Encoder and a 4x1 Multiplexer (MUX) in Logisim to understand the principles of data compression and data selection in digital systems.
 
@@ -189,7 +189,7 @@ The simulation confirmed that the Encoder effectively coded the input position, 
 
 Through this activity, we demonstrated how encoders and multiplexers function as the primary building blocks for data routing in a CPU. We concluded that while encoders are used to categorize and prioritize signals, multiplexers are critical for directing data flow between different registers and the ALU.
 
-                                                  _**LAB ACTIVITY 5**_
+                                                        LAB ACTIVITY 5
 
 **Aim:** 
 
@@ -254,7 +254,7 @@ The values in the registers updated exactly as predicted by the architectural lo
 
 Through this lab, we successfully utilized GDB to visualize how the CPU fetches operands. We concluded that different addressing modes provide a balance between instruction length and the flexibility of accessing complex data structures like arrays and pointers in memory.
 
-                                                  _**LAB ACTIVITY 6**_
+                                                          LAB ACTIVITY 6
 
 **Aim:** 
 
