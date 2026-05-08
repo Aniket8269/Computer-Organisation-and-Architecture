@@ -43,6 +43,7 @@ Step 4: VerificationOnce the application opens, locate the Canvas (center), the 
     Verify the results for all 8 possible input combinations.
 
 **Result/Observation:**
+
 Half Adder Truth Table
 
 | Input A | Input B | Sum (S) | Carry (C) |
@@ -92,7 +93,6 @@ chain.
 The carry output ($C_{out}$) of each Full Adder is connected to the carry input ($C_{in}$) of the next higher-order Full Adder. The carry "ripples" through the stages from the least significant bit (LSB) to the most significant bit (MSB). For a 4-bit adder, we add two 4-bit numbers $A (A_3 A_2 A_1 A_0)$ and $B (B_3 B_2 B_1 B_0)$ along with an initial carry ($C_{in}$), producing a 4-bit sum $S (S_3 S_2 S_1 S_0)$ and a final carry bit ($C_{out}$).
 
 **Procedure:** 
-
 1. Create a Full Adder Sub-circuit: Open Logisim and create a functional Full Adder circuit. Save this as a sub-circuit to be reused.
 2. Arrange Components: In a new main circuit, drag and drop four instances of the Full Adder sub-circuit labeled FA0, FA1, FA2, and FA3.
 3. Connect Carries: Connect the carry-out of FA0 to the carry-in of FA1, the carry-out of FA1 to the carry-in of FA2, and so on.
@@ -101,7 +101,6 @@ The carry output ($C_{out}$) of each Full Adder is connected to the carry input 
 6. Simulation: Use the Poke Tool to input binary values and observe if the sum and carry match manual binary addition.
 
 **Result:** 
-
 The 4-bit Ripple Carry Adder was successfully implemented. During simulation, the following test case was observed:
 | Input A | Input B | Carry In | Sum (S3-S0) | Carry Out | Decimal Equivalent |
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -121,7 +120,6 @@ The circuit correctly performed addition, though a small propagation delay was s
 **Aim:** To design, implement, and simulate an 8x3 Encoder and a 4x1 Multiplexer (MUX) in Logisim to understand the principles of data compression and data selection in digital systems.
 
 **Theory:** 
-
 This activity covers two essential combinatorial circuits used in data handling:
 
 1. 8x3 Encoder: An encoder is a circuit that converts an active input signal into a coded binary output. In an 8x3 encoder (Octal-to-Binary), there are eight input lines and three output lines. It identifies which input is "high" and represents that index in 3-bit binary form.
@@ -129,7 +127,6 @@ This activity covers two essential combinatorial circuits used in data handling:
 2. 4x1 Multiplexer (MUX): A multiplexer is a data selector that chooses one of several input signals and forwards it to a single output. A 4x1 MUX uses two selection lines ($S_1, S_0$) to determine which of the four data inputs ($D_0, D_1, D_2, D_3$) is connected to the output (Y).
 
 **Procedure:**
-
 1. For the 8x3 Encoder:
 
    - Create eight input pins (Y0-Y7) and three output pins (A2, A1, A0).
@@ -157,7 +154,6 @@ This activity covers two essential combinatorial circuits used in data handling:
    - Test the circuit by changing the selection bits and observing which data input is "passed through" to the output.
 
 **Result:** 
-
 Both circuits were successfully implemented and verified against their respective truth tables.
 8x3 Encoder Observation:
 
@@ -185,19 +181,13 @@ Both circuits were successfully implemented and verified against their respectiv
 
 The simulation confirmed that the Encoder effectively coded the input position, while the Multiplexer successfully routed the selected input to the output based on the control signals.
 
-**Conclusion:** 
-
-Through this activity, we demonstrated how encoders and multiplexers function as the primary building blocks for data routing in a CPU. We concluded that while encoders are used to categorize and prioritize signals, multiplexers are critical for directing data flow between different registers and the ALU.
+**Conclusion:** Through this activity, we demonstrated how encoders and multiplexers function as the primary building blocks for data routing in a CPU. We concluded that while encoders are used to categorize and prioritize signals, multiplexers are critical for directing data flow between different registers and the ALU.
 
                                                         LAB ACTIVITY 5
 
-**Aim:** 
+**Aim:** To observe and verify different microprocessor addressing modes by inspecting CPU registers and memory locations using the GNU Debugger (GDB).
 
-To observe and verify different microprocessor addressing modes by inspecting CPU registers and memory locations using the GNU Debugger (GDB).
-
-**Theory:** 
-
-Addressing modes are the methods by which the location of an operand is specified in an instruction. Understanding these modes is critical for optimizing assembly code and debugging low-level software. The primary modes explored in this activity include:
+**Theory:** Addressing modes are the methods by which the location of an operand is specified in an instruction. Understanding these modes is critical for optimizing assembly code and debugging low-level software. The primary modes explored in this activity include:
 
 1. Immediate Addressing: The operand is a constant value contained within the instruction itself (e.g., MOV EAX, 10).
 
@@ -231,9 +221,7 @@ GDB (GNU Debugger) allows us to pause program execution and use commands like `i
 
    - Use `x/wx $rbp - 8` to verify Displacement/Indexed addressing relative to the base pointer.
 
-**Result:** 
-
-The behavior of various addressing modes was observed in the GDB environment. The following observations were recorded during the debug session:
+**Result:** The behavior of various addressing modes was observed in the GDB environment. The following observations were recorded during the debug session:
 
 | Addressing Mode | Example Instruction | GDB Observation |
 | :---: | :---: | :---: |
@@ -250,19 +238,13 @@ The behavior of various addressing modes was observed in the GDB environment. Th
 
 The values in the registers updated exactly as predicted by the architectural logic of each mode.
 
-**Conclusion:** 
-
-Through this lab, we successfully utilized GDB to visualize how the CPU fetches operands. We concluded that different addressing modes provide a balance between instruction length and the flexibility of accessing complex data structures like arrays and pointers in memory.
+**Conclusion:** Through this lab, we successfully utilized GDB to visualize how the CPU fetches operands. We concluded that different addressing modes provide a balance between instruction length and the flexibility of accessing complex data structures like arrays and pointers in memory.
 
                                                           LAB ACTIVITY 6
 
-**Aim:** 
+**Aim:** To design and implement a 4-bit Common Bus System using multiplexers and tri-state buffers in Logisim to understand how data is transferred between multiple registers.
 
-To design and implement a 4-bit Common Bus System using multiplexers and tri-state buffers in Logisim to understand how data is transferred between multiple registers.
-
-**Theory:** 
-
-A Common Bus System is a communication pathway used to transfer data between various registers, the ALU, and memory within a computer. Instead of having separate wires connecting every register to every other register, a single "bus" is shared.
+**Theory:** A Common Bus System is a communication pathway used to transfer data between various registers, the ALU, and memory within a computer. Instead of having separate wires connecting every register to every other register, a single "bus" is shared.
 
 To prevent data collisions, the system uses two primary methods:
 
@@ -286,9 +268,7 @@ In this lab, we focus on a bus connecting four registers (Register A, B, C, and 
 
 6. Data Loading: Connect the bus back to the inputs of the registers through a "Load" enable gate to demonstrate how data can be transferred from the bus into a different register.
 
-**Result:** 
-
-The Common Bus System was successfully simulated. The following observations were made regarding data transfer:
+**Result:** The Common Bus System was successfully simulated. The following observations were made regarding data transfer:
 
 | Selection Lines (S1, S0) | Selected Register | Data on Bus |
 | :---: | :---: | :---: |
