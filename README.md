@@ -46,7 +46,7 @@ Step 4: VerificationOnce the application opens, locate the Canvas (center), the 
 Half Adder Truth Table
 
 | Input A | Input B | Sum (S) | Carry (C) |
-
+| :---: | :---: | :---: | :---: |
 
   0   0   0   0 
 
@@ -55,8 +55,7 @@ Half Adder Truth Table
   1   0   1   0  
 
   1   1   0   1
-  
-  | :---: | :---: | :---: | :---: |
+
 
 Full Adder Truth Table
 
