@@ -1,4 +1,4 @@
-                                                  _**LAB ACTIVITY 1**_
+                                                  LAB ACTIVITY 1
                                                   
 **Aim:** To successfully install and configure Logisim (or an actively maintained fork like Logisim-evolution) on a local workstation to enable the design and simulation of digital logic circuits.
 
@@ -14,7 +14,7 @@ Step 4: VerificationOnce the application opens, locate the Canvas (center), the 
 
 **Conclusion:** The Logisim environment has been correctly configured. This tool will serve as the primary platform for building and testing combinatorial and sequential logic circuits, providing a visual understanding of how data flows through a computer's architecture.
 
-                                                  _**LAB ACTIVITY 2**_
+                                                  LAB ACTIVITY 2
                                                   
 **Aim:** To design, implement, and simulate Half Adder and Full Adder circuits using Logisim and verify their truth tables.
 
@@ -44,11 +44,15 @@ Step 4: VerificationOnce the application opens, locate the Canvas (center), the 
 
 **Result/Observation:**
 Half Adder Truth Table
+
 | Input A | Input B | Sum (S) | Carry (C) |
+| :---: | :---: | :---: | :---: |
+
 | 0 | 0 | 0 | 0 |
 | 0 | 1 | 1 | 0 |
 | 1 | 0 | 1 | 0 |
 | 1 | 1 | 0 | 1 |
+
 Full Adder Truth Table
 | A | B | Cin | Sum | Cout |
 | 0 | 0 | 0 | 0 | 0 |
