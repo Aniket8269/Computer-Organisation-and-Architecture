@@ -25,51 +25,38 @@ Step 4: VerificationOnce the application opens, locate the Canvas (center), the 
 **Theory:** Adders are fundamental arithmetic circuits in a Computer’s Arithmetic Logic Unit (ALU).
 
 1.Half Adder: A combinatorial circuit that performs the addition of two binary digits (bits).
-
+        
         It produces two outputs: Sum (S) and Carry (C).
-        
         Sum is calculated using an XOR gate: $S = A \oplus B$
-        
         Carry is calculated using an AND gate: $C = A \cdot B$
-        
         Limitation: It cannot handle a carry-in bit from a previous addition.
 
 2.Full Adder: A circuit that adds three bits: two significant bits (A and B) and a carry bit (Cin) from a previous stage. 
-
+        
         Sum: $S = A \oplus B \oplus Cin$
-        
         Carry-out (Cout): $Cout = (A \cdot B) + (Cin \cdot (A \oplus B))$
-        
         A Full Adder can be constructed using two Half Adders and an OR gate.
 
 **Procedure:**
 
 1.Half Adder Construction:
-    
+
     Open Logisim and select the Wiring folder to place two input pins (A, B) and two output pins (Sum, Carry).
-    
     Place an XOR gate for the Sum and an AND gate for the Carry.
-    
     Connect the inputs to both gates and link the gate outputs to the respective output pins.
-    
     Use the Poke Tool to toggle inputs and verify the truth table.
 
 2.Full Adder Construction:
 
     Place three input pins (A, B, Cin) and two output pins (Sum, Cout).
-    
     Method A (Gates): Use two 3-input XOR gates (or two 2-input XORs) for Sum, and a combination of AND/OR gates for Carry-out.
-    
     Method B (Sub-circuits): Use the "Project -> Add Circuit" feature to create a Half Adder, then drag two instances of it into a new "Full Adder" circuit.
-    
     Connect the components according to the logic expressions.
-    
     Verify the results for all 8 possible input combinations.
 
 **Result/Observation:**
 
 Half Adder Truth Table
-
 | Input A | Input B | Sum (S) | Carry (C) |
 | :---: | :---: | :---: | :---: |
 
